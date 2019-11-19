@@ -1,6 +1,7 @@
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "./theme";
+import AppBar from "./components/AppBar";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -14,7 +15,7 @@ const App = () => {
     <>
       <GlobalStyles />
       <ThemeProvider theme={theme}>
-        <div>Header</div>
+        <AppBar />
       </ThemeProvider>
     </>
   );
