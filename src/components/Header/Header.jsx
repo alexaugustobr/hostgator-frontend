@@ -1,14 +1,14 @@
 import React from "react";
-import { ReactComponent as CoffeeTable } from "../../assets/coffee-table.svg";
-import { ReactComponent as WorkDesk } from "../../assets/work-desk.svg";
 
-import { Container } from "./styles";
+import { Container, CoffeTableImage, WorkDeskImage } from "./styles";
+import HeaderContent from "./HeaderContent";
 
 const Header = () => {
   return (
     <Container>
-      <WorkDesk />
-      <CoffeeTable />
+      <WorkDeskImage />
+      <HeaderContent />
+      <CoffeTableImage />
     </Container>
   );
 };
