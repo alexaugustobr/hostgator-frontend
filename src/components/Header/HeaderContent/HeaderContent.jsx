@@ -32,6 +32,7 @@ const HeaderContent = () => {
         textAlign="center"
         lineHeight="xxl"
         margin="xl"
+        color="white"
       >
         Tenha uma hospedagem de sites estável e evite perder visitantes
         diariamente

@@ -1,8 +1,8 @@
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { theme } from "./theme";
 import AppBar from "./components/AppBar";
-import Plans from "./containers/Plans";
+import HostingPlans from "./containers/HostingPlans";
+import { theme } from "./theme";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -19,7 +19,7 @@ const App = () => {
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <AppBar />
-        <Plans />
+        <HostingPlans />
       </ThemeProvider>
     </>
   );

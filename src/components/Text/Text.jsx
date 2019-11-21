@@ -44,7 +44,7 @@ Text.propTypes = {
 Text.defaultProps = {
   size: sizes.MD,
   fontWeight: fontWeights.REGULAR,
-  color: colors.WHITE,
+  color: colors.BLACK,
   colorVariation: colorVariations.default,
   margin: null,
   lineHeight: null,

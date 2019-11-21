@@ -41,7 +41,7 @@ Heading.propTypes = {
 Heading.defaultProps = {
   size: sizes.MD,
   fontWeight: fontWeights.REGULAR,
-  color: colors.WHITE,
+  color: colors.BLACK,
   textAlign: alignTypes.JUSTIFY,
   lineHeight: null,
   margin: null
