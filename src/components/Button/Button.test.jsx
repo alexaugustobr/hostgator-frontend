@@ -32,20 +32,16 @@ describe("Button test suit", () => {
 
   it("should render children", () => {
     const {
-      render: { debug, getByText }
+      render: { getByText }
     } = setup();
-
-    debug();
 
     expect(getByText("Button Label")).toBeInTheDocument();
   });
 
   it("should render with default color", () => {
     const {
-      render: { debug, getByText }
+      render: { getByText }
     } = setup();
-
-    debug();
 
     expect(getByText("Button Label")).toHaveStyleRule(
       "background-color",
