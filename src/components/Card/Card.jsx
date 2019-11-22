@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import { Container } from "./styles";
 
 const Card = ({ featured, children }) => {
-  return <Container featured={featured}>{children}</Container>;
+  return (
+    <Container data-testid="card-container" featured={featured}>
+      {children}
+    </Container>
+  );
 };
 
 Card.propTypes = {

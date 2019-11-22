@@ -8,10 +8,9 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white.default};
   border-radius: 5px;
   margin: ${({ theme }) => theme.spacings.xs};
+  ${({ theme, featured }) =>
+    featured
+      ? `border-top: 8px solid ${theme.colors.orange.default};
+     border-bottom: 4px solid ${theme.colors.orange.default};`
+      : ""}
 `;
-
-// ${({ theme, featured }) =>
-// featured
-//   ? `border-top: 8px solid ${theme.colors.orange.default};
-//      border-bottom: 4px solid ${theme.colors.orange.default};`
-//   : ""}

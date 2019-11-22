@@ -4,14 +4,9 @@ import AppBar from "./AppBar";
 
 afterEach(cleanup);
 
-const defaultProps = {};
-
-const setup = (props = defaultProps) => {
-  return {
-    props,
-    render: render(<AppBar {...props} />)
-  };
-};
+const setup = () => ({
+  render: render(<AppBar />)
+});
 
 describe("AppBar test suit", () => {
   it("renders without error", () => {
