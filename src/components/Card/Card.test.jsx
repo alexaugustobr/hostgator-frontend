@@ -16,7 +16,7 @@ const setup = (props = defaultProps) => {
   };
 };
 
-describe("AppBar test suit", () => {
+describe("Card test suit", () => {
   it("renders without error", () => {
     const {
       render: { container }
@@ -35,10 +35,8 @@ describe("AppBar test suit", () => {
 
   it("should render featured style", () => {
     const {
-      render: { getByTestId, debug }
+      render: { getByTestId }
     } = setup({ ...defaultProps, featured: true });
-
-    debug();
 
     expect(getByTestId("card-container")).toHaveStyleRule(
       "border-top",
