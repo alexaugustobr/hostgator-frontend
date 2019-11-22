@@ -10,7 +10,12 @@ const RadioGroup = ({ options, checked, onChange }) => {
     const isOptionChecked = option.key === checked;
 
     return (
-      <Option checked={isOptionChecked} onClick={() => onChange(option.key)}>
+      <Option
+        key={option.key}
+        data-testid={`option-${option.key}`}
+        checked={isOptionChecked}
+        onClick={() => onChange(option.key)}
+      >
         {isOptionChecked ? <Checked /> : <Unchecked />}
         <Text
           size="lg"
