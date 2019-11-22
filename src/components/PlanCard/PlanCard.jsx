@@ -21,27 +21,25 @@ import {
   OriginalValue,
   PlanItem,
   ValueBody,
-  Values
+  Values,
+  Container
 } from "./styles";
 
 const { P_PLAN, M_PLAN, TURBO_PLAN } = planTypes;
 
 const PlanCard = ({ plan, cycle }) => {
-  const getIconByPlan = useCallback(
-    name => {
-      switch (name) {
-        case P_PLAN:
-          return <PIcon />;
-        case M_PLAN:
-          return <MIcon />;
-        case TURBO_PLAN:
-          return <TurboIcon />;
-        default:
-          return <></>;
-      }
-    },
-    [plan.name]
-  );
+  const getIconByPlan = useCallback(name => {
+    switch (name) {
+      case P_PLAN:
+        return <PIcon />;
+      case M_PLAN:
+        return <MIcon />;
+      case TURBO_PLAN:
+        return <TurboIcon />;
+      default:
+        return <></>;
+    }
+  }, []);
 
   const isFeatured = useMemo(() => plan.name === "Plano M", [plan.name]);
 
@@ -65,72 +63,76 @@ const PlanCard = ({ plan, cycle }) => {
   );
 
   return (
-    <Card featured={isFeatured}>
-      <Header>
-        <IconContainer>{getIconByPlan(plan.name)}</IconContainer>
-        <Heading
-          size="md"
-          color="blue"
-          colorVariation={700}
-          lineHeight="lg"
-          fontWeight="bold"
-        >
-          {plan.name}
-        </Heading>
-      </Header>
-      <Divider />
-      <div>
-        <ValueBody>
-          <Values>
-            <OriginalValue>
-              <Text size="sm" color="black" lineHeight="md">
-                {`R$ ${planValue.value}`}
-              </Text>
-            </OriginalValue>
-            <Text size="sm" fontWeight="bold" lineHeight="md">
-              {`R$ ${planValue.valueWithDiscount}`}
-            </Text>
-          </Values>
-          <Text size="xs" lineHeight="md">
-            Equivalente a
-          </Text>
-          <MonthlyValue>
-            <Heading
-              size="xs"
-              lineHeight="md"
-              color="blue"
-              colorVariation={700}
-            >
-              <span>R$ </span>
-            </Heading>
-            <Heading
-              size="xxl"
-              lineHeight="md"
-              color="blue"
-              colorVariation={700}
-              fontWeight="bold"
-            >
-              {planValue.monthlyValue}
-            </Heading>
-            <Heading
-              size="xs"
-              lineHeight="md"
-              color="blue"
-              colorVariation={700}
-            >
-              /mês*
-            </Heading>
-          </MonthlyValue>
-          <Button color={isFeatured ? "orange" : "blue"}>Contrate Agora</Button>
-          <InfoText>
-            <Text fontWeight="bold">1 ano de domínio grátis</Text>
-            <InfoIcon />
-          </InfoText>
-        </ValueBody>
+    <Container featured={isFeatured}>
+      <Card>
+        <Header>
+          <IconContainer>{getIconByPlan(plan.name)}</IconContainer>
+          <Heading
+            size="md"
+            color="blue"
+            colorVariation={700}
+            lineHeight="lg"
+            fontWeight="bold"
+          >
+            {plan.name}
+          </Heading>
+        </Header>
         <Divider />
-        <ItemsBody>{planItems.map(renderPlanItem)}</ItemsBody>
-      </div>
-    </Card>
+        <div>
+          <ValueBody>
+            <Values>
+              <OriginalValue>
+                <Text size="sm" color="black" lineHeight="md">
+                  {`R$ ${planValue.value}`}
+                </Text>
+              </OriginalValue>
+              <Text size="sm" fontWeight="bold" lineHeight="md">
+                {`R$ ${planValue.valueWithDiscount}`}
+              </Text>
+            </Values>
+            <Text size="xs" lineHeight="md">
+              Equivalente a
+            </Text>
+            <MonthlyValue>
+              <Heading
+                size="xs"
+                lineHeight="md"
+                color="blue"
+                colorVariation={700}
+              >
+                <span>R$ </span>
+              </Heading>
+              <Heading
+                size="xxl"
+                lineHeight="md"
+                color="blue"
+                colorVariation={700}
+                fontWeight="bold"
+              >
+                {planValue.monthlyValue}
+              </Heading>
+              <Heading
+                size="xs"
+                lineHeight="md"
+                color="blue"
+                colorVariation={700}
+              >
+                /mês*
+              </Heading>
+            </MonthlyValue>
+            <Button color={isFeatured ? "orange" : "blue"}>
+              Contrate Agora
+            </Button>
+            <InfoText>
+              <Text fontWeight="bold">1 ano de domínio grátis</Text>
+              <InfoIcon />
+            </InfoText>
+          </ValueBody>
+          <Divider />
+          <ItemsBody>{planItems.map(renderPlanItem)}</ItemsBody>
+        </div>
+      </Card>
+    </Container>
   );
 };
 
@@ -138,9 +140,9 @@ PlanCard.propTypes = {
   plan: PropTypes.shape({
     name: PropTypes.string,
     id: PropTypes.number,
-    cycle: PropTypes.array
+    cycle: PropTypes.object
   }).isRequired,
-  cycle: PropTypes.oneOf([Object.values(cycleTypes)]).isRequired
+  cycle: PropTypes.oneOf(Object.values(cycleTypes)).isRequired
 };
 
 export default PlanCard;

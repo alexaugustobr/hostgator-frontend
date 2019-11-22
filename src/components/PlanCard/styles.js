@@ -7,6 +7,16 @@ export const Header = styled.div`
   align-items: center;
 `;
 
+export const Container = styled.div`
+  margin: ${({ theme }) => theme.spacings.xs};
+  ${({ theme, featured }) =>
+    featured
+      ? `border-top: 8px solid ${theme.colors.orange.default};
+         border-radius: 5px;
+         border-bottom: 4px solid ${theme.colors.orange.default};`
+      : ""}
+`;
+
 export const IconContainer = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.sm};
 `;

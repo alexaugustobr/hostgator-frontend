@@ -14,6 +14,7 @@ export const StyledButton = styled.button`
   cursor: pointer;
   font-weight: ${({ theme }) => theme.fontWeight.regular}
   transition: 0.3s ease;
+  border-width: 0px;
   &:hover {
     background-color: ${({ theme, color }) => theme.colors[color][700]};
     box-shadow: 0 6px 12px 1px ${({ theme }) =>

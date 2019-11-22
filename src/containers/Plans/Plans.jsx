@@ -3,9 +3,10 @@ import { useMediaQuery } from "react-responsive";
 import Slider from "react-slick";
 import PlanCard from "../../components/PlanCard";
 import priceService from "../../services/priceService";
-import { Container, PlansContainer } from "./styles";
+import { Container, PlansContainer, ExtraInfo } from "./styles";
 import cycleTypes from "../../utils/constants/cycleTypes";
 import CycleSelection from "../../components/CycleSelection/CycleSelection";
+import Text from "../../components/Text";
 
 const sortById = (a, b) => b - a;
 
@@ -64,6 +65,11 @@ const Plans = () => {
       ) : (
         <PlansContainer>{prices.map(renderPlanCard)}</PlansContainer>
       )}
+      <ExtraInfo>
+        <Text color="blue" size="sm" fontWeight="light">
+          *Confira as condições da promoção
+        </Text>
+      </ExtraInfo>
     </Container>
   );
 };

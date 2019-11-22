@@ -29,7 +29,7 @@ const Heading = ({
 };
 
 Heading.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   size: PropTypes.oneOf(Object.values(sizes)),
   fontWeight: PropTypes.oneOf(Object.values(fontWeights)),
   color: PropTypes.oneOf(Object.values(colors)),

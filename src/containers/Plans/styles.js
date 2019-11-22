@@ -7,4 +7,14 @@ export const Container = styled.div`
 export const PlansContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+`;
+
+export const ExtraInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: ${({ theme }) => theme.spacings.md};
+  ${({ theme }) => theme.breakpoints.lg} {
+    margin-top: ${({ theme }) => theme.spacings.sm};
+  }
 `;
