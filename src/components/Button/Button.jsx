@@ -11,7 +11,7 @@ const Button = ({ color, children }) => {
 
 Button.propTypes = {
   children: PropTypes.string.isRequired,
-  color: PropTypes.oneOf([Object.values(colors)])
+  color: PropTypes.oneOf(Object.values(colors))
 };
 
 Button.defaultProps = {
