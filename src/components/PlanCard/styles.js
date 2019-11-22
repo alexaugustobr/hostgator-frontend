@@ -23,6 +23,17 @@ export const ValueBody = styled.div`
   margin: 0px ${({ theme }) => theme.spacings.lg};
 `;
 
+export const ItemsBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0px ${({ theme }) => theme.spacings.lg};
+`;
+
+export const PlanItem = styled.span`
+  margin-bottom: ${({ theme, isLastItem }) =>
+    isLastItem ? "0px" : theme.spacings.xs};
+`;
+
 export const Values = styled.div`
   display: flex;
   align-items: baseline;

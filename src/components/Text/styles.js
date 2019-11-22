@@ -11,4 +11,9 @@ export const StyledText = styled.span`
     margin ? `margin-bottom: ${theme.spacings[margin]}` : ""}
   ${({ theme, lineHeight }) =>
     lineHeight ? `line-height: ${theme.lineHeight[lineHeight]}` : ""}
+  ${({ theme, link }) =>
+    link
+      ? `border-bottom: 1px dashed ${theme.colors.blue[100]};
+         cursor: pointer;`
+      : ""}
 `;

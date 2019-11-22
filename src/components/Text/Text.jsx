@@ -13,6 +13,7 @@ const Text = ({
   letterSpacing,
   margin,
   lineHeight,
+  link,
   children
 }) => {
   return (
@@ -24,6 +25,7 @@ const Text = ({
       letterSpacing={letterSpacing ? 1.6 : 0}
       margin={margin}
       lineHeight={lineHeight}
+      link={link}
     >
       {children}
     </StyledText>
@@ -38,7 +40,8 @@ Text.propTypes = {
   colorVariation: PropTypes.oneOf(Object.values(colorVariations)),
   margin: PropTypes.oneOf(Object.values(sizes)),
   lineHeight: PropTypes.oneOf(Object.values(sizes)),
-  letterSpacing: PropTypes.bool
+  letterSpacing: PropTypes.bool,
+  link: PropTypes.bool
 };
 
 Text.defaultProps = {
@@ -48,7 +51,8 @@ Text.defaultProps = {
   colorVariation: colorVariations.default,
   margin: null,
   lineHeight: null,
-  letterSpacing: false
+  letterSpacing: false,
+  link: false
 };
 
 export default Text;

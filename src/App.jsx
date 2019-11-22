@@ -3,6 +3,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import AppBar from "./components/AppBar";
 import HostingPlans from "./containers/HostingPlans";
 import { theme } from "./theme";
+import "react-tippy/dist/tippy.css";
 
 const GlobalStyles = createGlobalStyle`
   body {

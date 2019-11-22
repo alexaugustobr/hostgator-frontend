@@ -18,8 +18,11 @@ import {
   MonthlyValue,
   OriginalValue,
   ValueBody,
-  Values
+  Values,
+  ItemsBody,
+  PlanItem
 } from "./styles";
+import { getPlanItems } from "./planItemMapper";
 
 const { P_PLAN, M_PLAN, TURBO_PLAN } = planTypes;
 
@@ -52,6 +55,14 @@ const PlanCard = ({ plan, cycle }) => {
       monthlyValue: (valueWithDiscount / months).toFixed(2)
     };
   }, [cycle, plan]);
+
+  const planItems = getPlanItems(plan.name);
+
+  const renderPlanItem = (item, index) => (
+    <PlanItem key={index} isLastItem={index === planItems.length - 1}>
+      {item}
+    </PlanItem>
+  );
 
   return (
     <Card featured={isFeatured}>
@@ -117,6 +128,7 @@ const PlanCard = ({ plan, cycle }) => {
           </InfoText>
         </ValueBody>
         <Divider />
+        <ItemsBody>{planItems.map(renderPlanItem)}</ItemsBody>
       </div>
     </Card>
   );
