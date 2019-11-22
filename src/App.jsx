@@ -4,6 +4,8 @@ import AppBar from "./components/AppBar";
 import HostingPlans from "./containers/HostingPlans";
 import { theme } from "./theme";
 import "react-tippy/dist/tippy.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const GlobalStyles = createGlobalStyle`
   body {

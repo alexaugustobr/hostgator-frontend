@@ -7,4 +7,5 @@ export const CheckIcon = styled(Check)`
 
 export const Container = styled.div`
   margin-right: ${({ theme }) => theme.spacings.xs};
+  text-align: center;
 `;

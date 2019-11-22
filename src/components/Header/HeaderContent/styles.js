@@ -5,7 +5,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0px ${({ theme }) => theme.spacings.xl};
+  text-align: center;
+  margin: 20px ${({ theme }) => theme.spacings.xl};
+  ${({ theme }) => theme.breakpoints.xl} {
+    width: 25%;
+  }
 `;
 
 export const CheckItemsContainer = styled.div`

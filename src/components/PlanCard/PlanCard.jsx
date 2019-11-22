@@ -9,20 +9,20 @@ import Button from "../Button";
 import Card from "../Card";
 import Heading from "../Heading";
 import Text from "../Text";
+import { getPlanItems } from "./planItemMapper";
 import {
   Divider,
   Header,
   IconContainer,
   InfoIcon,
   InfoText,
+  ItemsBody,
   MonthlyValue,
   OriginalValue,
+  PlanItem,
   ValueBody,
-  Values,
-  ItemsBody,
-  PlanItem
+  Values
 } from "./styles";
-import { getPlanItems } from "./planItemMapper";
 
 const { P_PLAN, M_PLAN, TURBO_PLAN } = planTypes;
 

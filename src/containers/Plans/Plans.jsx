@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import Slider from "react-slick";
 import PlanCard from "../../components/PlanCard";
 import priceService from "../../services/priceService";
 import { Container, PlansContainer } from "./styles";
@@ -15,9 +17,23 @@ const cycleOptions = [
   { key: MONTHLY, label: "1 mês" }
 ];
 
+const settings = {
+  dots: true,
+  className: "slider variable-width center",
+  centerMode: true,
+  infinite: true,
+  slidesToShow: 1,
+  initialSlide: 1,
+  speed: 500,
+  variableWidth: true,
+  arrows: false
+};
+
 const Plans = () => {
   const [prices, setPrices] = useState([]);
   const [cycle, setCycle] = useState(cycleOptions[0].key);
+
+  const showCarousel = useMediaQuery({ query: "(max-width:  1024px)" });
 
   const loadPrices = async () => {
     const {
@@ -43,7 +59,11 @@ const Plans = () => {
         onChange={setCycle}
         options={cycleOptions}
       />
-      <PlansContainer>{prices.map(renderPlanCard)}</PlansContainer>
+      {showCarousel ? (
+        <Slider {...settings}>{prices.map(renderPlanCard)}</Slider>
+      ) : (
+        <PlansContainer>{prices.map(renderPlanCard)}</PlansContainer>
+      )}
     </Container>
   );
 };
